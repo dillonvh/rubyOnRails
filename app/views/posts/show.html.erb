@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post %>
+
+   <div class="btn-group mx-4 mt-2 mb-4" role="group" aria-label="Post Actions">
+      <%= link_to "Edit this post", edit_post_path(@post), :class => "btn btn-primary" %> 
+      <%= link_to "Back to posts", posts_path, :class => "btn btn-primary" %>
+    </div>
+<div>
+
+  <%= button_to "Destroy this post", @post, method: :delete %>
+</div>
