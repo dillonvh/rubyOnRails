@@ -1,11 +1,16 @@
-<% content_for :title, "New post" %>
+<div class="container">
+  
+  <p style="color: green"><%= notice %></p>
 
-<h1>New post</h1>
+  <% content_for :title, "New post" %>
 
-<%= render "form", post: @post %>
+  <h1>New post</h1>
 
-<br>
+  <%= render "form", post: @post %>
 
-<div>
-  <%= link_to "Back to posts", posts_path %>
+  <br>
+
+  <div>
+    <%= link_to "Back to posts", posts_path %>
+  </div>
 </div>

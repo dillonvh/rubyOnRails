@@ -2,16 +2,14 @@
 
   <p style="color: green"><%= notice %></p>
 
-  <% content_for :title, "Posts" %>
-
-  <h1>Posts</h1>
-
   <%= link_to new_post_path, :class => "btn btn-success mb-4" do %>
     <i class="bi bi-plus-circle-fill"></i> New
   <% end %>
 
+  <h1>Posts</h1>
+
   <div id="posts">
-    <% @posts.each do |post| %>
+    <% @posts.order("created_at DESC").each do |post| %>
       <%= render post %>
       <div class="btn-group mt-2 mb-4" role="group" aria-label="Post Actions">
         <%= link_to post, :class => "btn btn-primary" do %>
