@@ -1,12 +1,25 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="row mb-2">
+    <%= render @post %>
+  </div>
 
-<%= render @post %>
-
-   <div class="btn-group mx-4 mt-2 mb-4" role="group" aria-label="Post Actions">
-      <%= link_to "Edit this post", edit_post_path(@post), :class => "btn btn-primary" %> 
-      <%= link_to "Back to posts", posts_path, :class => "btn btn-primary" %>
+  <div class="row">
+    <div class="col-sm ps-0">
+      <%= link_to edit_post_path(@post), :class => "btn btn-primary mb-2" do %>
+        <i class="bi bi-pencil-fill"></i> Edit
+      <% end %> 
+      <%= button_to @post, method: :delete, :class => "btn btn-danger mb-2", form_class: "inlineButton" do %>
+        <i class="bi bi-trash-fill"></i> Delete
+      <% end %>
     </div>
-<div>
+  </div>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <div class ="row">
+    <div class="col-sm ps-0">
+      <%= link_to posts_path, :class => "btn btn-secondary mb-2" do %>
+        <i class="bi bi-chevron-double-left"></i> Back
+      <% end %>
+    </div>
+  </div>
 </div>
