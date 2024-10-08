@@ -1,0 +1,13 @@
+<div class="comment-<%= comment.id %> container" style="border: 1px solid black; padding: 1em">
+    Posted by <%= link_to "#{post.user.first_name} #{post.user.last_name}", user_path(post.user.id) %> | <span>Posted <%= time_ago_in_words(comment.created_at) %></span>
+    <% if current_user == comment.user %>
+        <div class="button-group float-end">
+            <%= button_to [post, comment], class:"btn btn-danger", method: :delete do %>
+                <i class="bi bi-trash-fill"></i> Delete
+            <% end %>
+        </div>
+    <% end %>
+    <hr/>
+    <%= comment.body %>
+
+</div>

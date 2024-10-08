@@ -1,7 +1,6 @@
-<p style="color: green"><%= notice %></p>
 <div class="container">
   <div class ="row">
-    <div class="col-sm ps-0">
+    <div class="col-sm">
       <%= link_to posts_path, :class => "btn btn-secondary mb-2" do %>
         <i class="bi bi-chevron-double-left"></i> Back
       <% end %>
@@ -14,7 +13,7 @@
 
   <% if current_user && current_user.id == @post.user_id %>
   <div class="row">
-    <div class="col-sm ps-0">
+    <div class="col-sm">
       <%= link_to edit_post_path(@post), :class => "btn btn-primary mb-2" do %>
         <i class="bi bi-pencil-fill"></i> Edit
       <% end %> 
@@ -24,5 +23,11 @@
     </div>
   </div>
   <% end %>
+</div>
 
+<div class="container">
+    <% @comments.each do |comment| %>
+      <%= render 'comments/comment', post: @post, comment: comment %>
+    <% end %>
+    <%= render 'comments/form', post: @post %>
 </div>

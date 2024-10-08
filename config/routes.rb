@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
-  resources :posts
+  # /posts/1/comments/4
+  resources :posts do
+    resources :comments
+  end
 
   get "/u/:id", to: "users#profile", as: "user"
   get "about", to: "pages#about"
