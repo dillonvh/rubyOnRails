@@ -8,7 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create(email: "test@email", password: "None1234", password_confirmation: "None1234", firstName: "Dillon", LastName: "Test")
+User.create(email: "test@email", password: "None1234", password_confirmation: "None1234", first_name: "Dillon", last_name: "Test", views: 0)
 
 5.times do |x|
   Post.create(title: "Title #{x}", body: "This is the content body for post #{x}", user_id: User.first.id)

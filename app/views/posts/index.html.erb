@@ -9,7 +9,7 @@
   <h1>Posts</h1>
 
   <div id="posts">
-    <% @posts.order("created_at DESC").each do |post| %>
+    <% @posts.each do |post| %>
       <%= render post %>
       <div class="btn-group mt-2 mb-4" role="group" aria-label="Post Actions">
         <%= link_to post, :class => "btn btn-primary" do %>
