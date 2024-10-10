@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# environment var helper
+gem 'dotenv', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -57,3 +60,5 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem 'faraday', '~> 2.12'
+gem 'json', '~> 2.7', '>= 2.7.2'
