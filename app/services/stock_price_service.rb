@@ -9,7 +9,7 @@ class StockPriceService
     response = Faraday.get(@url)
     if response.status == 200
       body = JSON.parse(response.body)
-      @stockPrice = body["Global Quote"]["05. price"]
+      @stockPrice = body["Global Quote"]["05. price"].to_f
     end
   end
 end
