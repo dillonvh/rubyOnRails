@@ -1,0 +1,13 @@
+<div class="asset-<%= asset.id %> container">
+    <% if current_user == portfolio.user %>
+        <div class="button-group float-end">
+            <%= button_to [portfolio, asset], class:"btn btn-danger", method: :delete do %>
+                <i class="bi bi-trash-fill"></i> Delete
+            <% end %>
+        </div>
+    <% end %>
+    <hr/>
+    <%= asset.ticker %>
+    <%= asset.desired_weight %>
+
+</div>

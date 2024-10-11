@@ -1,0 +1,20 @@
+<div class="container my-4">
+  <h1>Portfolios</h1>
+
+  <% if @portfolios.length == 0%>
+    <%= link_to new_portfolio_path, :class => "btn btn-success mb-4" do %>
+      <i class="bi bi-plus-circle-fill"></i> Create
+    <% end %>
+  <% end %>
+
+  <div id="portfolios">
+    <% @portfolios.each do |portfolio| %>
+      <%= render portfolio, showDetail: false %>
+      <div class="btn-group mt-2 mb-4" role="group" aria-label="Post Actions">
+        <%= link_to portfolio, :class => "btn btn-primary" do %>
+          <i class="bi bi-eye-fill"></i> Show
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

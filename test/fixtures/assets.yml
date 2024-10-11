@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticker: MyString
+  price: 9.99
+  current_weight: 9.99
+  desired_weight: 9.99
+  user: one
+  portfolio: one
+
+two:
+  ticker: MyString
+  price: 9.99
+  current_weight: 9.99
+  desired_weight: 9.99
+  user: two
+  portfolio: two

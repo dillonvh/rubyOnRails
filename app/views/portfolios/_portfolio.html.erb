@@ -1,0 +1,28 @@
+<div id="<%= dom_id portfolio %>" class="card border-0">
+  <div class="card-body px-0">
+    <h2 class="card-title">
+      <%= portfolio.name %>
+    </h2>
+    <% if !showDetail %>
+      <p class="card-text">
+        <%= portfolio.assets.map{ |asset| "#{asset.ticker} (#{asset.desired_weight.to_s}%)"}.join(" | ") %>
+      </p>
+    <% else %>
+      <div class="container">
+        <div class="row">
+          <% portfolio.assets.each do |asset| %>
+            <div class="col p-0">
+              <div class="card border-0">
+                <div class="card-body">
+                  <h5 class="card-title"><%= asset.ticker %></h5>
+                  <p class="card-text">Current Price: <%= number_to_currency(StockPriceService.new(asset.ticker).call) %></p>
+                  <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

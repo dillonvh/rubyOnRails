@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
 
+  resources :portfolios do
+    resources :assets
+  end
+
   # /posts/1/comments/4
   resources :posts do
     resources :comments
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
 
   get "/u/:id", to: "users#profile", as: "user"
   get "about", to: "pages#about"
+  get "portfolios", to: "porfolios#index"
   get "posts", to: "posts#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

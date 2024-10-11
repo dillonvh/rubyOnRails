@@ -1,0 +1,41 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-sm p-0">
+      <%= link_to portfolios_path, :class => "btn btn-secondary mb-2" do %>
+        <i class="bi bi-chevron-double-left"></i> Back
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <%= render @portfolio, showDetail: true %>
+  </div>
+
+  <% if current_user && current_user.id == @portfolio.user_id %>
+  <div class="row">
+    <div class="col-sm">
+      <%= link_to edit_portfolio_path(@portfolio), :class => "btn btn-primary mb-2" do %>
+        <i class="bi bi-pencil-fill"></i> Edit
+      <% end %> 
+      <%= button_to @portfolio, method: :delete, :class => "btn btn-danger mb-2", form_class: "inlineButton" do %>
+        <i class="bi bi-trash-fill"></i> Delete
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<% if @assets.reduce(0) { |sum, asset| sum + asset.desired_weight} != 100 %>
+  <div class="container my-4">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Add Asset</h3>
+          <div class="card-text">
+            <%= render 'assets/form', portfolio: @portfolio %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

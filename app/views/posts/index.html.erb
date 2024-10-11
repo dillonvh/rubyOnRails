@@ -1,9 +1,9 @@
-<div class = "container">
-  <%= link_to new_post_path, :class => "btn btn-success mb-4" do %>
-    <i class="bi bi-plus-circle-fill"></i> New
-  <% end %>
-
+<div class="container my-4">
   <h1>Posts</h1>
+
+  <%= link_to new_post_path, :class => "btn btn-success mb-4" do %>
+    <i class="bi bi-plus-circle-fill"></i> New Post
+  <% end %>
 
   <div id="posts">
     <% @posts.each do |post| %>
