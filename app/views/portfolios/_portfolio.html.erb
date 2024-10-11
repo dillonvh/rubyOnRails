@@ -11,11 +11,12 @@
       <div class="container">
         <div class="row">
           <% portfolio.assets.each do |asset| %>
+            <% stock = StockService.new(asset.ticker) %>
             <div class="col p-0">
               <div class="card border-0">
                 <div class="card-body">
-                  <h5 class="card-title"><%= asset.ticker %></h5>
-                  <p class="card-text">Current Price: <%= number_to_currency(StockService.new(asset.ticker).price) %></p>
+                  <h5 class="card-title"><%= stock.name %></h5>
+                  <p class="card-text">Current Price: <%= number_to_currency(stock.price) %></p>
                   <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
                 </div>
               </div>
