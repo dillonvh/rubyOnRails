@@ -62,6 +62,7 @@ class PortfoliosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_portfolio
+      @colors = ["#291f43", "#483775", "#674ea7", "#9583c1", "#c2b8dc"]
       @portfolio = Portfolio.find(params[:id])
     end
 

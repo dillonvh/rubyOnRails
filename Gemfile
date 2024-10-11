@@ -59,6 +59,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem "chartkick"
 gem "devise", "~> 4.9"
 gem 'faraday', '~> 2.12'
 gem 'json', '~> 2.7', '>= 2.7.2'
