@@ -15,7 +15,7 @@
               <div class="card border-0">
                 <div class="card-body">
                   <h5 class="card-title"><%= asset.ticker %></h5>
-                  <p class="card-text">Current Price: <%= number_to_currency(StockPriceService.new(asset.ticker).call) %></p>
+                  <p class="card-text">Current Price: <%= number_to_currency(StockService.new(asset.ticker).price) %></p>
                   <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
                 </div>
               </div>
