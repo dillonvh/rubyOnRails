@@ -1,2 +1,76 @@
-<div class="container my-4">
+<div class="container my-5">
+    <div class="row mx-5 pb-2 align-items-center justify-content-center">
+        <div class="col-md-auto">
+            <h2 style="font-family: Silkscreen; font-size:4em">Dillon Van Horn</h2>
+        </div>
+    </div>
+    
+    <div class="row mx-5 align-items-center">
+        <div class="col-sm-3 mt-5 justify-content-center">
+            <img src=<%= asset_path("profile.png")%> alt="Dillon" style="max-width:225px; height:auto">
+        </div>
+        <div class="col-xl-9 justify-content-center mt-5">
+            <p>
+                I am a passionate Full Stack Software Developer with a Bachelor of Science in Computer Science from Simon Fraser University. I love Digging into software and collaborating with clients in order to produce efficient work flows and better user experiences. My favourite part of being a software developer is the ability to improve or automate almost any task using technology.
+            </p>
+
+            <p>
+                I have over four years of industry experience, including developing B2B software empowering 1000+ financial advisors to better serve their clients by seamlessly transitioning between onboarding, account management, documents, and client care. I have proficiency with JavaScript, C# .NET, MongoDB, and enjoy learning new technologies (like this site, created using Ruby on Rails).
+            </p>
+
+            <p>
+                Outside of the tech world I enjoy hiking, camping, cooking, reading up on personal finance, and lots of coffee.
+            </p>
+        </div>
+    </div>
+
+    
+    <div class="row mt-5 pt-5 align-items-center justify-content-center">
+        <div class="col-md-auto">
+            <h6>Hiking Highlights</h6>
+        </div>
+    </div>
+    <div class="row align-items-center justify-content-center">
+        <div class="col-7">
+            <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <% @carouselData.each_with_index do |entry, index| %>
+                        <% if index == 0%>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <% else %>
+                            <button type="button" data-bs-target="#photoCarousel" data-bs-slide-to= <%= "#{index}" %> aria-label="<%= "Slide #{(index + 1).to_s}" %>" ></button>
+                        <% end %>
+                    <% end %>
+                </div>
+                <div class="carousel-inner">
+                    <% @carouselData.each_with_index do |image, index| %>
+                        <% if index == 0 %>
+                            <div class="carousel-item active" data-bs-interval="6000">
+                                <img src=<%= image["path"] %> class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p><%= image["description"] %></p>
+                                </div>
+                            </div>
+                        <% else %>
+                            <div class="carousel-item" data-bs-interval="6000">
+                                <img src=<%= image["path"] %> class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <p><%= image["description"] %></p>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
 </div>

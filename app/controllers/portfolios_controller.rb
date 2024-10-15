@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, only: %i[ show edit update destroy ]
+  # before_action :set_portfolio, only: %i[ show edit update destroy ]
+  before_action :set_portfolio
 
   # GET /portfolios or /portfolios.json
   def index
@@ -63,7 +64,8 @@ class PortfoliosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_portfolio
       @colors = ["#291f43", "#483775", "#674ea7", "#9583c1", "#c2b8dc"]
-      @portfolio = Portfolio.find(params[:id])
+      # @portfolio = Portfolio.find(params[:id])
+      @portfolio = Portfolio.count > 0 ? Portfolio.first : Portfolio.new
     end
 
     # Only allow a list of trusted parameters through.
