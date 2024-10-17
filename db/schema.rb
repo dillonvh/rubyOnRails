@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_11_001201) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_16_224549) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_11_001201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
+    t.string "name"
     t.index ["portfolio_id"], name: "index_assets_on_portfolio_id"
   end
 
@@ -75,10 +76,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_11_001201) do
 
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_portfolios_on_user_id"
+    t.decimal "pending_contribution", default: "0.0"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -111,6 +111,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_11_001201) do
   add_foreign_key "assets", "portfolios"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "portfolios", "users"
   add_foreign_key "posts", "users"
 end

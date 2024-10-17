@@ -10,13 +10,13 @@
 
 User.create(email: "test@email", password: "None1234", password_confirmation: "None1234", first_name: "Default", last_name: "User", views: 0)
 
-Portfolio.create(name: "Index Portfolio", user_id: User.first.id)
+Portfolio.create(name: "Index Portfolio")
 last_id = Portfolio.maximum('id')
 
-Asset.create(ticker: "XIC.TO", desired_weight: 30.0, portfolio_id: last_id)
-Asset.create(ticker: "XIU.TO", desired_weight: 45.0, portfolio_id: last_id)
-Asset.create(ticker: "XEF.TO", desired_weight: 20.0, portfolio_id: last_id)
-Asset.create(ticker: "XEC.TO", desired_weight: 5.0, portfolio_id: last_id)
+Asset.create(ticker: "XIC.TO", desired_weight: 30.0, quantity: 91, portfolio_id: last_id)
+Asset.create(ticker: "XUU.TO", desired_weight: 45.0, quantity: 90, portfolio_id: last_id)
+Asset.create(ticker: "XEF.TO", desired_weight: 20.0, quantity: 59, portfolio_id: last_id)
+Asset.create(ticker: "XEC.TO", desired_weight: 5.0, quantity: 20, portfolio_id: last_id)
 
 
 5.times do |x|
