@@ -1,13 +1,22 @@
 <div class="container my-4">
-  <%# <h1>Portfolios</h1> %>
-  <%= render @portfolio, showDetail: true %>
+  <h1>Portfolio Rebalancer</h1>
 
+  <div class="mt-4 mb-2">
+    <%= render @example_portfolio, example: true, showDetail: false %>
+  </div>
+  <div class="btn-group" role="group" aria-label="Post Actions">
+    <%= link_to @example_portfolio, :class => "btn btn-primary" do %>
+      <i class="bi bi-eye-fill"></i> Test it out
+    <% end %>
+  </div>
   
-  <%# if @portfolios.length == 0%>
-    <%#= link_to new_portfolio_path, :class => "btn btn-success mb-4" do %>
-      <%#i class="bi bi-plus-circle-fill"></i> Create
-    <%# end %>
-  <%# end %>
+  <br/>
+
+  <% if false %> <%# to do %> 
+  <%= link_to new_portfolio_path, :class => "btn btn-success my-5" do %>
+    <i class="bi bi-plus-circle-fill"></i> Create a new portfolio
+  <% end %>
+  <% end %>
 
   <%#div id="portfolios">
     <%# @portfolios.each do |portfolio| %>
