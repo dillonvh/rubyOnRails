@@ -1,24 +1,7 @@
-# README
+# My Personal Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Take a look at [dillonvanhorn.com](https://dillonvanhorn.com/)
 
-Things you may want to cover:
+This is my playground for Ruby on Rails.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Currently contains an about me page, and other tabs of various projects, like a Stock Portfolio Rebalancing tool that calculates the necessary buys for a given contribution to rebalance a portfolio back to its designated asset weights.
